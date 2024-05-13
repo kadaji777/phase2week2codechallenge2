@@ -12,6 +12,7 @@ const YourBotArmy = ({ army, releaseBot, dischargeBot }) => {
             bot={bot}
             onEnlist={releaseBot}
             onDischarge={dischargeBot}
+            onDelete={deleteBot}
           />
         ))}
       </div>
