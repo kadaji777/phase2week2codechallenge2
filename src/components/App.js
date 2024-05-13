@@ -1,10 +1,10 @@
-import React, { useState } from 'react'; 
-import { BrowserRouter as Router } from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from '../AppRouter';
 import YourBotArmy from './YourBotArmy';
 
 const App = () => {
-  const [army, setArmy] = useState([]); 
+  const [army, setArmy] = useState([]);
 
   const enlistBot = (bot) => {
     if (!army.some((b) => b.id === bot.id)) {
@@ -18,15 +18,19 @@ const App = () => {
 
   const dischargeBot = (bot) => {
     setArmy(army.filter((b) => b.id !== bot.id));
-    
+  };
+
+  const handleDelete = (bot) => {
+    setArmy(army.filter((b) => b.id !== bot.id));
   };
 
   return (
-    <Router> 
-      <YourBotArmy army={army} releaseBot={releaseBot} dischargeBot={dischargeBot} />
+    <Router>
+      <YourBotArmy army={army} releaseBot={releaseBot} dischargeBot={dischargeBot} onDelete={handleDelete} />
       <AppRouter enlistBot={enlistBot} />
     </Router>
   );
 };
 
 export default App;
+
