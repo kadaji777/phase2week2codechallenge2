@@ -11,7 +11,12 @@ const BotCard = ({ bot, onEnlist, onDelete, onDischarge }) => {
 
   const handleDelete = (e) => {
     e.stopPropagation(); 
-    onDelete(bot); 
+    onDelete(bot); // Call onDelete function to delete the bot
+  };
+
+  const handleDischarge = (e) => {
+    e.stopPropagation(); 
+    onDischarge(bot); // Call onDischarge function to discharge the bot
   };
 
   return (
@@ -20,7 +25,7 @@ const BotCard = ({ bot, onEnlist, onDelete, onDischarge }) => {
       <img src={bot.avatar_url} alt={bot.name} />
       <h3>{bot.name}</h3>
       <button className="black-button" onClick={(e) => { e.stopPropagation(); onEnlist(bot); }}>Enlist</button>
-      <button className="black-button" onClick={(e) => { e.stopPropagation(); onDischarge(bot); }}>Discharge</button> 
+      <button className="black-button" onClick={handleDischarge}>Discharge</button> 
     </div>
   );
 };
