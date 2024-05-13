@@ -11,12 +11,12 @@ const BotCard = ({ bot, onEnlist, onDelete, onDischarge }) => {
 
   const handleDelete = (e) => {
     e.stopPropagation(); 
-    onDelete(bot); // Call onDelete function to delete the bot
+    onDelete(bot); 
   };
 
   const handleDischarge = (e) => {
     e.stopPropagation(); 
-    onDischarge(bot); // Call onDischarge function to discharge the bot
+    onDischarge(bot); 
   };
 
   return (
