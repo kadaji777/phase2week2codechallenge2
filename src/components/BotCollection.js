@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import BotCard from './BotCard';
+import botsData from '../data/bots.json'; 
 
 const BotCollection = ({ enlistBot }) => {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
-    const fetchBots = async () => {
-      try {
-        const response = await fetch(../data/bots.json'; 
-');
-        if (!response.ok) {
-          throw new Error('Failed to fetch bots');
-        }
-        const data = await response.json();
-        setBots(data.bots);
-      } catch (error) {
-        console.error('Error fetching bots:', error);
-      }
-    };
-
-    fetchBots();
+    setBots(botsData.bots); 
   }, []);
 
   return (
