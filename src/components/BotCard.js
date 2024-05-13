@@ -20,7 +20,7 @@ const BotCard = ({ bot, onEnlist, onDelete, onDischarge }) => {
       <img src={bot.avatar_url} alt={bot.name} />
       <h3>{bot.name}</h3>
       <button className="black-button" onClick={(e) => { e.stopPropagation(); onEnlist(bot); }}>Enlist</button>
-      <button className="black-button" onClick={(e) => { e.stopPropagation(); onDischarge(bot); }}>Discharge</button> {/* Discharge button */}
+      <button className="black-button" onClick={(e) => { e.stopPropagation(); onDischarge(bot); }}>Discharge</button> 
     </div>
   );
 };
