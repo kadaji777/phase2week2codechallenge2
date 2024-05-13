@@ -7,7 +7,7 @@ const BotCollection = ({ enlistBot }) => {
   useEffect(() => {
     const fetchBots = async () => {
       try {
-        const response = await fetch('/data/bots'); // Assuming your backend API endpoint is '/api/bots'
+        const response = await fetch('/data/bots'); 
         if (!response.ok) {
           throw new Error('Failed to fetch bots');
         }
