@@ -7,7 +7,8 @@ const BotCollection = ({ enlistBot }) => {
   useEffect(() => {
     const fetchBots = async () => {
       try {
-        const response = await fetch('htpp:localhost:3000/bots');
+        const response = await fetch('htpp:localhost:3000../data/bots.json'; 
+');
         if (!response.ok) {
           throw new Error('Failed to fetch bots');
         }
